@@ -493,3 +493,78 @@ switch (currentPage) {
   default:
     break;
 }
+function renderSupportChat() {
+  const widget = document.createElement('div');
+  widget.className = 'support-widget';
+  widget.innerHTML = `
+    <section class="support-window" id="supportWindow" aria-labelledby="supportTitle" hidden>
+      <header class="support-header">
+        <div>
+          <span class="support-status">НА СВЯЗИ</span>
+          <h2 id="supportTitle">Чат поддержки</h2>
+        </div>
+        <button class="support-close" type="button" aria-label="Закрыть чат">×</button>
+      </header>
+      <div class="support-messages" id="supportMessages" role="log" aria-live="polite">
+        <div class="support-message support-message-agent">
+          <span>Поддержка</span>
+          <p>Здравствуйте! Напишите свой вопрос.</p>
+        </div>
+      </div>
+      <form class="support-form">
+        <label class="visually-hidden" for="supportInput">Ваш вопрос</label>
+        <input id="supportInput" name="message" type="text" maxlength="1000" placeholder="Напишите сообщение…" autocomplete="off" required />
+        <button type="submit" aria-label="Отправить сообщение" title="Отправить">↑</button>
+      </form>
+    </section>
+    <button class="support-toggle" type="button" aria-label="Открыть чат поддержки" aria-controls="supportWindow" aria-expanded="false" title="Чат поддержки">
+      <span aria-hidden="true">💬</span>
+    </button>
+  `;
+  document.body.append(widget);
+
+  const windowElement = widget.querySelector('.support-window');
+  const toggleButton = widget.querySelector('.support-toggle');
+  const closeButton = widget.querySelector('.support-close');
+  const form = widget.querySelector('.support-form');
+  const input = widget.querySelector('#supportInput');
+  const messages = widget.querySelector('#supportMessages');
+
+  function setOpen(open) {
+    windowElement.hidden = !open;
+    toggleButton.setAttribute('aria-expanded', String(open));
+    if (open) input.focus();
+  }
+
+  function addMessage(text, kind, author) {
+    const message = document.createElement('div');
+    message.className = `support-message support-message-${kind}`;
+    const label = document.createElement('span');
+    label.textContent = author;
+    const content = document.createElement('p');
+    content.textContent = text;
+    message.append(label, content);
+    messages.append(message);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  toggleButton.addEventListener('click', () => setOpen(windowElement.hidden));
+  closeButton.addEventListener('click', () => setOpen(false));
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+
+    addMessage(question, 'customer', 'Вы');
+    input.value = '';
+    addMessage('бебебебебе', 'agent', 'Поддержка');
+    input.focus();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !windowElement.hidden) setOpen(false);
+  });
+}
+
+renderSupportChat();
