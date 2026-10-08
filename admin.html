@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaMarket Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="admin" class="admin-body">
+    <div class="admin-shell">
+      <aside class="admin-sidebar">
+        <div class="admin-brand">
+          <div class="brand-logo">N</div>
+          <div>
+            <strong>NovaMarket</strong>
+            <span>Admin</span>
+          </div>
+        </div>
+
+        <nav class="admin-nav">
+          <a href="#overview" class="active">Обзор</a>
+          <a href="#products">Товары</a>
+          <a href="#orders">Заказы</a>
+          <a href="#users">Пользователи</a>
+          <a href="#settings">Настройки</a>
+        </nav>
+
+        <a class="admin-link" href="index.html">← На сайт</a>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-header">
+          <div>
+            <p class="eyebrow">Панель управления</p>
+            <h1>Dashboard</h1>
+          </div>
+          <button class="primary-btn small">+ Новый товар</button>
+        </header>
+
+        <section class="stat-grid" id="overview">
+          <article class="stat-card accent-blue">
+            <span>Выручка</span>
+            <strong>₽ 1 284 000</strong>
+            <small>+18.2% за месяц</small>
+          </article>
+          <article class="stat-card accent-green">
+            <span>Заказы</span>
+            <strong>1 284</strong>
+            <small>+124 сегодня</small>
+          </article>
+          <article class="stat-card accent-yellow">
+            <span>Пользователи</span>
+            <strong>8 421</strong>
+            <small>+11 за сегодня</small>
+          </article>
+          <article class="stat-card accent-red">
+            <span>Товары</span>
+            <strong>348</strong>
+            <small>42 в наличии</small>
+          </article>
+        </section>
+
+        <section class="charts-box">
+          <div class="panel-head">
+            <h3>График продаж</h3>
+          </div>
+          <div class="chart-bars" aria-label="График продаж">
+            <span style="height: 32%"></span>
+            <span style="height: 58%"></span>
+            <span style="height: 42%"></span>
+            <span style="height: 76%"></span>
+            <span style="height: 86%"></span>
+            <span style="height: 68%"></span>
+            <span style="height: 94%"></span>
+            <span style="height: 72%"></span>
+            <span style="height: 100%"></span>
+            <span style="height: 80%"></span>
+            <span style="height: 54%"></span>
+            <span style="height: 62%"></span>
+          </div>
+        </section>
+
+        <section class="admin-grid">
+          <div class="panel" id="orders">
+            <div class="panel-head">
+              <h3>Последние заказы</h3>
+              <a href="#">Все заказы</a>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Клиент</th>
+                  <th>Сумма</th>
+                  <th>Статус</th>
+                </tr>
+              </thead>
+              <tbody id="recentOrders"></tbody>
+            </table>
+          </div>
+
+          <div class="panel" id="products">
+            <div class="panel-head">
+              <h3>Товары</h3>
+              <a href="#">Управление</a>
+            </div>
+            <ul class="admin-list" id="adminProducts"></ul>
+          </div>
+        </section>
+
+        <section class="admin-grid bottom-grid">
+          <div class="panel" id="users">
+            <div class="panel-head">
+              <h3>Пользователи</h3>
+              <a href="#">Все</a>
+            </div>
+            <ul class="admin-list" id="adminUsers"></ul>
+          </div>
+
+          <div class="panel" id="settings">
+            <div class="panel-head">
+              <h3>Настройки</h3>
+              <a href="#">Редактировать</a>
+            </div>
+            <ul class="settings-list">
+              <li><span>Контакты</span><strong>+7 (800) 505-10-10</strong></li>
+              <li><span>Адрес самовывоза</span><strong>Москва, ул. Лесная, 12</strong></li>
+              <li><span>Логотип</span><strong>Обновлён</strong></li>
+              <li><span>Favicon</span><strong>Активен</strong></li>
+            </ul>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

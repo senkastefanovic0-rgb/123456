@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaMarket — магазин</title>
+    <meta
+      name="description"
+      content="Новый маркетплейс с каталогом, корзиной, админ-панелью и современным дизайном."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="home">
+    <header class="topbar">
+      <div class="container nav">
+        <a href="index.html" class="brand-wrap" aria-label="NovaMarket home">
+          <div class="brand-logo">N</div>
+          <div>
+            <div class="brand-name">NovaMarket</div>
+            <div class="brand-sub">digital store</div>
+          </div>
+        </a>
+
+        <nav class="main-nav" aria-label="Главное меню">
+          <a href="#catalog">Каталог</a>
+          <a href="#promo">Промо</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="link-btn" href="auth.html">Войти</a>
+          <a class="link-btn" href="admin.html">Админ</a>
+          <button class="cart-button" id="cartToggle" aria-label="Корзина">
+            <span>Корзина</span>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="pill">Новинки сезона</span>
+            <h1>Технологии для жизни и работы</h1>
+            <p>
+              Умное оборудование, аксессуары, техника для дома и офиса — всё в одном магазине.
+              Выбирайте быстро, оформляйте просто, получайте качественный сервис.
+            </p>
+            <div class="hero-actions">
+              <a href="#catalog" class="primary-btn">В каталог</a>
+              <a href="auth.html" class="secondary-btn">Личный кабинет</a>
+            </div>
+            <ul class="hero-stats">
+              <li><strong>15k+</strong><span>заказов</span></li>
+              <li><strong>4.9/5</strong><span>рейтинг</span></li>
+              <li><strong>48h</strong><span>доставка</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="device-card large">
+              <span class="mini-tag">Top pick</span>
+              <div class="device-visual">
+                <div class="screen"></div>
+              </div>
+              <div class="device-info">
+                <h3>AirBeam Pro</h3>
+                <p>Премиальные наушники с лучшим звуком</p>
+              </div>
+            </div>
+            <div class="device-card small">
+              <div class="dot"></div>
+              <div>
+                <strong>Скидка 20%</strong>
+                <span>на умный дом</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalog">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Каталог</span>
+              <h2>Подберите товары</h2>
+            </div>
+            <div class="catalog-tools">
+              <input id="searchInput" type="search" placeholder="Поиск по названию" />
+              <select id="sortSelect" aria-label="Сортировка">
+                <option value="popular">По популярности</option>
+                <option value="price-asc">Цена: по возрастанию</option>
+                <option value="price-desc">Цена: по убыванию</option>
+                <option value="new">Сначала новые</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-bar" id="categoryFilters"></div>
+          <div class="catalog-grid" id="productGrid"></div>
+        </div>
+      </section>
+
+      <section class="promo" id="promo">
+        <div class="container promo-box">
+          <div>
+            <span class="eyebrow">Промо</span>
+            <h2>Скидки до 30% на новые наборы</h2>
+          </div>
+          <a href="#catalog" class="primary-btn">Смотреть промо</a>
+        </div>
+      </section>
+
+      <section class="features" id="about">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow">Почему выбирают нас</span>
+            <h2>Удобство, качество, доверие</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon">⚡</div>
+              <h3>Быстрая доставка</h3>
+              <p>Доставляем за 1–3 дня по Москве и до 7 дней по регионам.</p>
+            </article>
+            <article class="feature-card">
+              <div class="icon">🛡️</div>
+              <h3>Гарантия качества</h3>
+              <p>Оригинальные товары и подробные характеристики перед покупкой.</p>
+            </article>
+            <article class="feature-card">
+              <div class="icon">💬</div>
+              <h3>Поддержка 24/7</h3>
+              <p>Поможем с выбором товара, оформлением и возвратом.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews" id="reviews">
+        <div class="container">
+          <div class="section-head center">
+            <span class="eyebrow">Отзывы</span>
+            <h2>Что говорят покупатели</h2>
+          </div>
+
+          <div class="review-grid">
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>«Очень удобно и приятно оформлять покупки. Все быстро и без стресса.»</p>
+              <strong>Анна К.</strong>
+            </article>
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>«Товары соответствуют описанию, доставка в срок, поддержка оперативная.»</p>
+              <strong>Игорь П.</strong>
+            </article>
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>«Дизайн и интерфейс очень понятные. Видно, что команда уделила внимание UX.»</p>
+              <strong>Марина С.</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq" id="faq">
+        <div class="container narrow">
+          <div class="section-head center">
+            <span class="eyebrow">FAQ</span>
+            <h2>Частые вопросы</h2>
+          </div>
+
+          <div class="faq-list">
+            <details open>
+              <summary>Как оформить заказ?</summary>
+              <p>Добавьте товары в корзину, выберите способ оплаты и подтвердите оформление.</p>
+            </details>
+            <details>
+              <summary>Можно ли оплатить картой?</summary>
+              <p>Да, доступна оплата банковской картой онлайн и по реквизитам.</p>
+            </details>
+            <details>
+              <summary>Возможен самовывоз?</summary>
+              <p>Да. После подтверждения заказа вы можете забрать товар по адресу офиса.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Корзина">
+      <div class="cart-header">
+        <h3>Корзина</h3>
+        <button class="close-cart" id="closeCart" aria-label="Закрыть корзину">×</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Итого</span>
+          <strong id="cartTotal">0 ₽</strong>
+        </div>
+        <button class="checkout-btn" id="checkoutButton" type="button">Оформить заказ</button>
+      </div>
+    </aside>
+
+    <div class="checkout-overlay" id="checkoutModal" hidden>
+      <section class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+        <div class="checkout-modal-header">
+          <div>
+            <span class="eyebrow">NovaMarket</span>
+            <h2 id="checkoutTitle">Оформление заказа</h2>
+          </div>
+          <button class="close-cart" id="closeCheckout" type="button" aria-label="Закрыть оформление">×</button>
+        </div>
+
+        <form class="checkout-form" id="checkoutForm">
+          <div class="checkout-fields">
+            <label>Имя и фамилия<input name="name" type="text" autocomplete="name" placeholder="Иван Иванов" required /></label>
+            <label>Телефон<input name="phone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required /></label>
+            <label>Email<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+            <label>Адрес доставки<input name="address" type="text" autocomplete="street-address" placeholder="Город, улица, дом" required /></label>
+            <label>Способ оплаты
+              <select name="payment" required>
+                <option value="card">Банковская карта</option>
+                <option value="upon-delivery">При получении</option>
+              </select>
+            </label>
+          </div>
+          <div class="checkout-order-summary">
+            <h3>Ваш заказ</h3>
+            <div id="checkoutItems"></div>
+            <div class="summary-row">
+              <span>К оплате</span>
+              <strong id="checkoutTotal">0 ₽</strong>
+            </div>
+          </div>
+          <button class="checkout-btn" type="submit">Подтвердить заказ</button>
+        </form>
+
+        <div class="checkout-success" id="checkoutSuccess" hidden>
+          <div class="success-mark" aria-hidden="true">✓</div>
+          <h3>Заказ оформлен</h3>
+          <p id="checkoutSuccessText"></p>
+          <button class="primary-btn" id="finishCheckout" type="button">Готово</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

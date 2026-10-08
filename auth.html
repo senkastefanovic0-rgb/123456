@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaMarket — вход</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="auth" class="auth-page">
+    <main class="auth-screen">
+      <div class="auth-window" id="loginWindow">
+        <section class="auth-card">
+        <div class="auth-header">
+        <div>
+          <span class="eyebrow">NovaMarket</span>
+          <h2 style="margin:10px 0 0">Вход в аккаунт</h2>
+        </div>
+        </div>
+
+        <form class="auth-form form-grid" data-type="login">
+          <label>
+            Email
+            <input type="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Пароль
+            <input type="password" placeholder="••••••••" required />
+          </label>
+          <button class="submit-btn auth-actions" type="submit">Войти</button>
+        </form>
+        <p class="auth-switch-row">Нет аккаунта? <button class="secondary-btn auth-switch" type="button" data-show="registerWindow">Зарегистрироваться</button></p>
+        </section>
+        <a class="secondary-btn" href="index.html">← Назад на главную</a>
+      </div>
+
+      <div class="auth-window" id="registerWindow" hidden>
+        <section class="auth-card">
+        <div class="auth-header">
+          <div>
+            <span class="eyebrow">NovaMarket</span>
+            <h2 style="margin:10px 0 0">Создать аккаунт</h2>
+          </div>
+        </div>
+
+        <form class="auth-form form-grid" data-type="register">
+          <label>
+            Имя
+            <input type="text" placeholder="Ваше имя" required />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Пароль
+            <input type="password" placeholder="••••••••" required />
+          </label>
+          <button class="submit-btn auth-actions" type="submit">Зарегистрироваться</button>
+        </form>
+        <p class="auth-switch-row">Уже есть аккаунт? <button class="secondary-btn auth-switch" type="button" data-show="loginWindow">Войти</button></p>
+        </section>
+        <a class="secondary-btn" href="index.html">← Назад на главную</a>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
